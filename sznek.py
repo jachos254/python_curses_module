@@ -15,18 +15,19 @@ win.nodelay(True) # nie czeka na kolejna akcje
 
 # sznek i żarcie, uzywamy krotki
 
-snake = [(3, 10), (3, 9), (3, 8)] # startowe współrzędne szneka
+snake = [(5, 10), (5, 9), (5, 8)] # startowe współrzędne szneka
 food = (10, 20) # pierwsze jedzonko
 
 win.addch(food[0], food[1], '?')          # to samo dla jedzonka food0 i food1 pierwsza i druga wsplorzedna z krotki
 # logika szneka
-score = 0
+score = 3
 
 EXIT = 27      #27 to nr escape w module curses
 key = curses.KEY_RIGHT
 
 while key != EXIT:
-    win.addstr(0, 4, 'Sznek ' + str(score) + ' ')
+    win.addstr(0, 4, 'Sznek.exe')
+    win.addstr(0, 50, 'Score ' + str(score) + ' ')
     win.timeout(150 - (len(snake)) // 5 + len(snake) // 10 % 120) # dodanie prędkości
 
     prev_key = key

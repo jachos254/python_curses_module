@@ -3,6 +3,11 @@
 import curses
 import random
 
+
+
+snake_piece = '☭'
+fruit_piece = u"\u534D"
+
 # ustawienia okienka
 curses.initscr()
 win = curses.newwin(20, 60) # wys i szer
@@ -18,7 +23,7 @@ win.nodelay(True) # nie czeka na kolejna akcje
 snake = [(5, 10), (5, 9), (5, 8)] # startowe współrzędne szneka
 food = (10, 20) # pierwsze jedzonko
 
-win.addch(food[0], food[1], '?')          # to samo dla jedzonka food0 i food1 pierwsza i druga wsplorzedna z krotki
+win.addch(food[0], food[1], fruit_piece)          # to samo dla jedzonka food0 i food1 pierwsza i druga wsplorzedna z krotki
 # logika szneka
 score = 3
 
@@ -28,7 +33,7 @@ key = curses.KEY_RIGHT
 while key != EXIT:
     win.addstr(0, 4, 'Sznek.exe')
     win.addstr(0, 50, 'Score ' + str(score) + ' ')
-    #win.timeout(150 - (len(snake)) // 5 + len(snake) // 10 % 120) # dodanie prędkości
+    # win.timeout(150 - (len(snake)) // 5 + len(snake) // 10 % 120) # dodanie prędkości
     win.timeout(-1)
 
     prev_key = key
@@ -70,7 +75,7 @@ while key != EXIT:
             food = (random.randint(1, 18), random.randint(1, 58))
             if food in snake:
                 food = ()
-        win.addch(food[0], food[1], '?')
+        win.addch(food[0], food[1], fruit_piece)
     else:
         # ruch szneka
         last = snake.pop()
@@ -78,7 +83,7 @@ while key != EXIT:
 
 
 
-    win.addch(snake[0][0], snake[0][1], '6')          # to samo dla jedzonka food0 i food1 pierwsza i druga wsplorzedna z krotki
+    win.addch(snake[0][0], snake[0][1], snake_piece)          # to samo dla jedzonka food0 i food1 pierwsza i druga wsplorzedna z krotki
 
 
 curses.endwin() # konczy okno

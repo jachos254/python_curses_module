@@ -69,9 +69,10 @@ def rocket(x):
 while True:
     win.addstr(0, 4, 'Szpejs_Invaders.exe')
     win.addstr(0, 50, 'Score ' + str(score) + ' ')
-    win.timeout(150 - (len(snake)) // 5 + len(snake) // 10 % 120) # dodanie prędkości
+    # win.timeout(150 - (len(snake)) // 5 + len(snake) // 10 % 120) # dodanie prędkości
     # win.timeout(150 - (len(rockets)) // 5 + len(rockets) // 10 % 120)
-    # win.timeout(-1)
+    win.timeout(-1)
+    # win.timeout(60)
 
 
     key = win.getch()
@@ -99,14 +100,14 @@ while True:
     if key == curses.KEY_RIGHT:
         last = snake.pop()
         win.addch(last[0], last[1], ' ')
-        x += 3 if x < 58 else 0
+        x += 1 if x < 58 else 0
         snake.insert(0, (18, x))
         win.addch(snake[0][0], snake[0][1], snake_piece)
 
     if key == curses.KEY_LEFT:
         last = snake.pop()
         win.addch(last[0], last[1], ' ')
-        x -= 3 if x > 2 else 0
+        x -= 1 if x > 2 else 0
         snake.insert(0, (18, x))
         win.addch(snake[0][0], snake[0][1], snake_piece)
 

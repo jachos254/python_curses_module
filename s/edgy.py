@@ -33,9 +33,9 @@ key = curses.KEY_RIGHT
 while key != EXIT:
     win.addstr(0, 4, 'Sznek.exe')
     win.addstr(0, 50, 'Score ' + str(score) + ' ')
-    win.timeout(150 - (len(snake)) // 5 + len(snake) // 10 % 120) # dodanie prędkości
+    # win.timeout(150 - (len(snake)) // 5 + len(snake) // 10 % 120) # dodanie prędkości
     # win.timeout(-1)
-
+    win.timeout(60)
     prev_key = key
     event = win.getch()
     key = event if event != -1 else prev_key

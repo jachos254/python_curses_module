@@ -6,7 +6,7 @@ import time
 
 
 
-snake_piece = '6'
+snake_piece = '卐'
 fruit_piece = "✡"
 rocket_avatar = '|'
 
@@ -22,7 +22,7 @@ win.nodelay(True) # nie czeka na kolejna akcje
 
 # sznek i żarcie, uzywamy krotki
 
-snake = [(18, 30)] # startowe współrzędne szneka
+snake = [(18, 30), (18, 29), (18, 28)] # startowe współrzędne szneka
 # food = (15, 5) # pierwsze jedzonko
 
 
@@ -34,6 +34,10 @@ for y in range(margin, 10, width):
     for x in range(margin, 60 - width, width):
         food = (y, x)
         win.addch(food[0], food[1], fruit_piece)
+
+win.addch(snake[0][0], snake[0][1], snake_piece)
+win.addch(snake[1][0], snake[1][1], snake_piece)
+win.addch(snake[2][0], snake[2][1], snake_piece)
 
 
 score = 0

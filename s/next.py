@@ -10,7 +10,7 @@ elien = "✡"
 missile = '|'
 score = 0
 height = 30
-width = 90
+width = 120
 
 # ustawienia okienka
 curses.initscr()

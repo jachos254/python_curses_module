@@ -3,9 +3,9 @@
 import curses
 import random
 
+#卐
 
-
-snake_piece = '卐'
+snake_piece = '|'
 fruit_piece = "✡"
 
 # ustawienia okienka

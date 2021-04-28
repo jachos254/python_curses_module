@@ -5,8 +5,8 @@ import time
 
 
 
-skin = '6'
-elien = "✡"
+skin = '8'
+elien = "*"
 missile = '|'
 score = 0
 height = 30

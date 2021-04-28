@@ -2,8 +2,8 @@
 import  curses
 import random
 
-hero_avatar = '☭'
-elien_avatar = '✡'
+hero_avatar = '#'
+elien_avatar = '*'
 rocket_avatar = '|'
 
 curses.initscr()

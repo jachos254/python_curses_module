@@ -6,8 +6,8 @@ import time
 
 
 
-snake_piece = '卐'
-fruit_piece = "✡"
+snake_piece = '#'
+fruit_piece = "*"
 rocket_avatar = '|'
 
 # ustawienia okienka
